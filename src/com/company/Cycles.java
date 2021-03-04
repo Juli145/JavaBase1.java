@@ -25,16 +25,43 @@ public class Cycles {
         }
          return true;
     }
-    public static int root(int a){
-        int i;
-        int[] array = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20};
 
-        for (i = 1; i < array.length; i++) {
-            if (a / i == i) {
+    public static int sqrSelect(int number) {
+        int result = 0;
+        for (int i = 1; i <= number / 2; i++) {
+            if (i * i <= number && (i + 1) * (i + 1) > number) {
+                result =  i;
                 break;
             }
         }
-        return i;
+        return result;
+    }
+
+
+    public static int sqrtBinary(int x) {
+        int result = x;
+        boolean finished = false;
+        if (x != 0 && x != 1) {
+            int start = 1, end = x / 2;
+            while (start <= end) {
+                int mid = start + (end - start) / 2;
+                if (mid == x / mid) {
+                    result = mid;
+                    finished = true;
+                    break;
+                }
+                if (mid < x / mid) {
+                    start = mid + 1;
+                } else {
+                    end = mid - 1;
+                }
+            }
+            if (!finished) {
+                result = start - 1;
+            }
+        }
+
+        return result;
     }
     public static int factorial(int n){
         int result = 1;

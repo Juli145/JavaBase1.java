@@ -33,8 +33,15 @@ public class CyclesTest {
 
 
     @Test
-    public void test_49_root(){
-        int  actual = Cycles.root(49);
+    public void test_sqrSelect(){
+        int  actual = Cycles.sqrSelect(49);
+        int expected = 7;
+        Assertions.assertEquals(actual, expected);
+    }
+
+    @Test
+    public void test_sqrtBinary(){
+        int  actual = Cycles.sqrtBinary(49);
         int expected = 7;
         Assertions.assertEquals(actual, expected);
     }
