@@ -23,8 +23,12 @@ public class MyMath {
         return result = (velocity1 * time) + (velocity2 * time) + distance;
     }
 
-    public static double method3(double x, double y){
-        return 5;
+    void isInside( double x,double y){
+        if(  (x >= 0) && (y >= 1.5 * (x -1) && (y <= x)||(x <= 0) && (y >= -1.5 * x-1) && (y <= -x))){
+            System.out.println(1);
+        }else{
+            System.out.println(0);
+        }
     }
 
     public static double method4(int x){
